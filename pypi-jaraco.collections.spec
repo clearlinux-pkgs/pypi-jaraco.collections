@@ -4,7 +4,7 @@
 #
 Name     : pypi-jaraco.collections
 Version  : 3.5.1
-Release  : 23
+Release  : 24
 URL      : https://files.pythonhosted.org/packages/f6/4b/b9b09f98a1626599598addc333d6c5066f97b55b0a065eeb711bd1c21f71/jaraco.collections-3.5.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/f6/4b/b9b09f98a1626599598addc333d6c5066f97b55b0a065eeb711bd1c21f71/jaraco.collections-3.5.1.tar.gz
 Summary  : Collection objects similar to those in stdlib by jaraco
@@ -66,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1642005396
+export SOURCE_DATE_EPOCH=1649767532
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
