@@ -4,7 +4,7 @@
 #
 Name     : pypi-jaraco.collections
 Version  : 3.5.2
-Release  : 29
+Release  : 30
 URL      : https://files.pythonhosted.org/packages/cb/ef/e249700b1cec81a6b1c64e876005f8c203022d388ea10b104c5eaacb9473/jaraco.collections-3.5.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/cb/ef/e249700b1cec81a6b1c64e876005f8c203022d388ea10b104c5eaacb9473/jaraco.collections-3.5.2.tar.gz
 Summary  : Collection objects similar to those in stdlib by jaraco
