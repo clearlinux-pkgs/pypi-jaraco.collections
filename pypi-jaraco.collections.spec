@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-jaraco.collections
-Version  : 3.9.0
-Release  : 39
-URL      : https://files.pythonhosted.org/packages/23/92/79a670dbdba5f4a6249b85577a2c9df1b2cc2a6548bff2a250fa66aa9d18/jaraco.collections-3.9.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/23/92/79a670dbdba5f4a6249b85577a2c9df1b2cc2a6548bff2a250fa66aa9d18/jaraco.collections-3.9.0.tar.gz
+Version  : 4.0.0
+Release  : 40
+URL      : https://files.pythonhosted.org/packages/ff/d1/b06e9c9c3343c5bb056c84376e0cc19c3d94108454e495bda1f402f37ed8/jaraco.collections-4.0.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/ff/d1/b06e9c9c3343c5bb056c84376e0cc19c3d94108454e495bda1f402f37ed8/jaraco.collections-4.0.0.tar.gz
 Summary  : Collection objects similar to those in stdlib by jaraco
 Group    : Development/Tools
 License  : MIT
@@ -15,11 +15,7 @@ Requires: pypi-jaraco.collections-license = %{version}-%{release}
 Requires: pypi-jaraco.collections-python = %{version}-%{release}
 Requires: pypi-jaraco.collections-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pypi(jaraco.classes)
-BuildRequires : pypi(jaraco.text)
 BuildRequires : pypi(py)
-BuildRequires : pypi(setuptools)
-BuildRequires : pypi(setuptools_scm)
 BuildRequires : pypi-pluggy
 BuildRequires : pypi-pytest
 BuildRequires : pypi-tox
@@ -54,7 +50,6 @@ Summary: python3 components for the pypi-jaraco.collections package.
 Group: Default
 Requires: python3-core
 Provides: pypi(jaraco.collections)
-Requires: pypi(jaraco.classes)
 Requires: pypi(jaraco.text)
 
 %description python3
@@ -62,10 +57,10 @@ python3 components for the pypi-jaraco.collections package.
 
 
 %prep
-%setup -q -n jaraco.collections-3.9.0
-cd %{_builddir}/jaraco.collections-3.9.0
+%setup -q -n jaraco.collections-4.0.0
+cd %{_builddir}/jaraco.collections-4.0.0
 pushd ..
-cp -a jaraco.collections-3.9.0 buildavx2
+cp -a jaraco.collections-4.0.0 buildavx2
 popd
 
 %build
@@ -73,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679585409
+export SOURCE_DATE_EPOCH=1680049331
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
