@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-jaraco.collections
-Version  : 4.0.0
-Release  : 40
-URL      : https://files.pythonhosted.org/packages/ff/d1/b06e9c9c3343c5bb056c84376e0cc19c3d94108454e495bda1f402f37ed8/jaraco.collections-4.0.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/ff/d1/b06e9c9c3343c5bb056c84376e0cc19c3d94108454e495bda1f402f37ed8/jaraco.collections-4.0.0.tar.gz
+Version  : 4.1.0
+Release  : 41
+URL      : https://files.pythonhosted.org/packages/39/5f/3d235b6c12b117c7bc0d96a2bc6ab6bdac00567f8e595729a0cfe14994a7/jaraco.collections-4.1.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/39/5f/3d235b6c12b117c7bc0d96a2bc6ab6bdac00567f8e595729a0cfe14994a7/jaraco.collections-4.1.0.tar.gz
 Summary  : Collection objects similar to those in stdlib by jaraco
 Group    : Development/Tools
 License  : MIT
@@ -57,10 +57,10 @@ python3 components for the pypi-jaraco.collections package.
 
 
 %prep
-%setup -q -n jaraco.collections-4.0.0
-cd %{_builddir}/jaraco.collections-4.0.0
+%setup -q -n jaraco.collections-4.1.0
+cd %{_builddir}/jaraco.collections-4.1.0
 pushd ..
-cp -a jaraco.collections-4.0.0 buildavx2
+cp -a jaraco.collections-4.1.0 buildavx2
 popd
 
 %build
@@ -68,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680049331
+export SOURCE_DATE_EPOCH=1680793552
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
