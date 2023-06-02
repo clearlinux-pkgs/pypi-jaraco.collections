@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-jaraco.collections
-Version  : 4.1.0
-Release  : 41
-URL      : https://files.pythonhosted.org/packages/39/5f/3d235b6c12b117c7bc0d96a2bc6ab6bdac00567f8e595729a0cfe14994a7/jaraco.collections-4.1.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/39/5f/3d235b6c12b117c7bc0d96a2bc6ab6bdac00567f8e595729a0cfe14994a7/jaraco.collections-4.1.0.tar.gz
+Version  : 4.2.0
+Release  : 42
+URL      : https://files.pythonhosted.org/packages/95/60/2cf3c42c0dc26342885390a61a71cb5cb7b49f9bf181bb3e56573ae28a0e/jaraco.collections-4.2.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/95/60/2cf3c42c0dc26342885390a61a71cb5cb7b49f9bf181bb3e56573ae28a0e/jaraco.collections-4.2.0.tar.gz
 Summary  : Collection objects similar to those in stdlib by jaraco
 Group    : Development/Tools
 License  : MIT
@@ -16,6 +16,8 @@ Requires: pypi-jaraco.collections-python = %{version}-%{release}
 Requires: pypi-jaraco.collections-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(py)
+BuildRequires : pypi(setuptools)
+BuildRequires : pypi(setuptools_scm)
 BuildRequires : pypi-pluggy
 BuildRequires : pypi-pytest
 BuildRequires : pypi-tox
@@ -57,10 +59,10 @@ python3 components for the pypi-jaraco.collections package.
 
 
 %prep
-%setup -q -n jaraco.collections-4.1.0
-cd %{_builddir}/jaraco.collections-4.1.0
+%setup -q -n jaraco.collections-4.2.0
+cd %{_builddir}/jaraco.collections-4.2.0
 pushd ..
-cp -a jaraco.collections-4.1.0 buildavx2
+cp -a jaraco.collections-4.2.0 buildavx2
 popd
 
 %build
@@ -68,15 +70,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680793552
+export SOURCE_DATE_EPOCH=1685719181
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
@@ -93,7 +95,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-jaraco.collections
-cp %{_builddir}/jaraco.collections-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-jaraco.collections/8e6689d37f82d5617b7f7f7232c94024d41066d1 || :
+cp %{_builddir}/jaraco.collections-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-jaraco.collections/0445ed0f69910eeaee036f09a39a13c6e1f37e12 || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -116,7 +118,7 @@ rm -f %{buildroot}*/usr/lib/python3.*/site-packages/jaraco/__pycache__/__init__.
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/pypi-jaraco.collections/8e6689d37f82d5617b7f7f7232c94024d41066d1
+/usr/share/package-licenses/pypi-jaraco.collections/0445ed0f69910eeaee036f09a39a13c6e1f37e12
 
 %files python
 %defattr(-,root,root,-)
